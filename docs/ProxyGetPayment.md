@@ -1,0 +1,42 @@
+# SwaggerClient::ProxyGetPayment
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**account_id** | **String** |  The unique account ID for the customer that the payment is for. **Character limit**: 32 **Values**: a valid account ID  | [optional] 
+**accounting_code** | **String** |  The Chart of Accounts  | [optional] 
+**amount** | **Float** |  The amount of the payment. **Character limit**: 16 **Values**: a valid currency value  | [optional] 
+**applied_credit_balance_amount** | **Float** |  The amount of the payment to apply to a credit balance. This field is required in the Create call when the &#x60;AppliedInvoiceAmount&#x60; field value is null. **Character limit**: 16 **Values**: a valid currency value  | [optional] 
+**auth_transaction_id** | **String** |  The authorization transaction ID from the payment gateway. Use this field for electronic payments, such as credit cards. **Character limit**: 50 **Values**: a string of 50 characters or fewer  | [optional] 
+**bank_identification_number** | **String** |  The first six digits of the credit card or debit card used for the payment, when applicable. **Character limit**: 6 **Values**: automatically generated  | [optional] 
+**cancelled_on** | **DateTime** |  The date when the payment was canceled. **Character limit**: 29 **Values**: automatically generated  | [optional] 
+**comment** | **String** |  Additional information related to the payment. **Character limit**: 255 **Values**: a string of 255 characters or fewer  | [optional] 
+**created_by_id** | **String** |  The user ID of the person who created the &#x60;Payment&#x60; object. **Character limit**: 32 **Values**: automatically generated  | [optional] 
+**created_date** | **DateTime** |  The date when the Payment object was created in the Zuora system. **Character limit**: 29 **Values** automatically generated  | [optional] 
+**effective_date** | **Date** |  The date when the payment takes effect. **Character limit**: 29 **Values**: a valid date and time value  | [optional] 
+**gateway** | **String** |  Name of the gateway instance that processes the payment. When creating a Payment, this must be a valid gateway instance name and this gateway must support the specific payment method. If not specified, the default gateway on the Account will be used.  | [optional] 
+**gateway_order_id** | **String** |  A merchant-specified natural key value that can be passed to the electronic payment gateway when a payment is created. If not specified, the PaymentNumber will be passed in instead. **Character limit**: 70 **Values**: a string of 70 characters or fewer  | [optional] 
+**gateway_response** | **String** |  The message returned from the payment gateway for the payment. This message is gateway-dependent. **Character limit**: 500 **Values**: automatically generated  | [optional] 
+**gateway_response_code** | **String** |  The code returned from the payment gateway for the payment. This code is gateway-dependent. **Character limit**: 20 **Values**: automatically generated  | [optional] 
+**gateway_state** | **String** |  The status of the payment in the gateway; use for reconciliation. **Character limit**: 19 **Values**: automatically generated  | [optional] 
+**id** | **String** | Object identifier. | [optional] 
+**marked_for_submission_on** | **DateTime** |  The date when a payment was marked and waiting for batch submission to the payment process. **Character limit**: 29 **Values**: automatically generated  | [optional] 
+**payment_method_id** | **String** |  The ID of the payment method used for the payment. Required for Create. **Character limit**: 32 **Values**: automatically generated  | [optional] 
+**payment_method_snapshot_id** | **String** |  The unique ID of the payment method snapshot which is a copy of the particular Payment Method used in a transaction. **Character limit**: 32 **Values**: a valid payment method snapshot ID  | [optional] 
+**payment_number** | **String** |  The unique identification number of a payment. For example: P-00000028. **Character limit**: 32 **Values**: automatically generated  | [optional] 
+**reference_id** | **String** |  The transaction ID returned by the payment gateway. Use this field to reconcile payments between your gateway and Z-Payments. **Character limit**: 60 **Values**: a string of 60 characters or fewer  | [optional] 
+**refund_amount** | **Float** |  The amount of the payment that is refunded. This field is null if no refund is made against the payment. **Character limit**: 16 **Values**: automatically generated  | [optional] 
+**second_payment_reference_id** | **String** |  The transaction ID returned by the payment gateway if there is an additional transaction for the payment. Use this field to reconcile payments between your gateway and Zuora Payments. **Character limit**: 60 **Values**: a string of 60 characters or fewer  | [optional] 
+**settled_on** | **DateTime** |  The date when the payment was settled in the payment processor. This field is used by the Spectrum gateway only and not applicable to other gateways. **Character limit**: 29 **Values**: automatically generated  | [optional] 
+**soft_descriptor** | **String** |  A payment gateway-specific field that maps to Zuora for the gateways, Orbital, Vantiv and Verifi. **Character limit**: 35 **Values**: &#x60;[SDMerchantName]*[SDProductionInfo]&#x60;  | [optional] 
+**soft_descriptor_phone** | **String** |  A payment gateway-specific field that maps to Zuora for the gateways, Orbital, Vantiv and Verifi. **Character limit**: 20 **Values**: &#x60;[SDPhone]&#x60;  | [optional] 
+**source** | **String** |  Indicates how the payment was created, whether through API, manually, import, or payment run. **Character limit**: **Values**: Payment Run, Import, Manually, and API  | [optional] 
+**source_name** | **String** |  Name of the source. **Character limit**: **Values**: Payment Run number or a file name.  | [optional] 
+**status** | **String** |  The status of the payment in Zuora. The value depends on the type of payment. **Character limit**: 11 **Values**: one of the following:  -  Electronic payments: &#x60;Processed&#x60;, &#x60;Error&#x60;, &#x60;Voided&#x60;  -  External payments: &#x60;Processed&#x60;, &#x60;Canceled&#x60; * Update of status can change value from &#x60;Processed&#x60; to &#x60;Canceled&#x60; when the payment type is external.  | [optional] 
+**submitted_on** | **DateTime** |  The date when the payment was submitted. **Character limit:** 29 **Values**: automatically generated  | [optional] 
+**transferred_to_accounting** | **String** |  Indicates if the payment was transferred to an external accounting system. Use this field for integration with accounting systems, such as NetSuite. **Character limit**: 11 **Values**: &#x60;Processing&#x60;, &#x60;Yes&#x60;, &#x60;Error&#x60;, &#x60;Ignore&#x60;  | [optional] 
+**type** | **String** |  Indicates if the payment is external or electronic. **Character limit**: 10 **Values**: &#x60;External&#x60;, &#x60;Electronic&#x60;  | [optional] 
+**updated_by_id** | **String** |  The ID of the user who last updated the payment. **Character limit**: **Values**: automatically generated  | [optional] 
+**updated_date** | **DateTime** |  The date when the payment was last updated. **Character limit**: **Values** **Values**: automatically generated  | [optional] 
+
+
